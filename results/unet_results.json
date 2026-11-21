@@ -1,0 +1,341 @@
+{
+  "test_samples": 1000,
+  "baseline_icp_threshold": {
+    "threshold": 0.055,
+    "dice": 0.426114869100752,
+    "iou": 0.30924964154737117,
+    "dice_deformed": 0.41307631658912003,
+    "false_alarm_rate_symmetric": 0.5
+  },
+  "unet": {
+    "dice": 0.8997711075023237,
+    "iou": 0.8461718374968374,
+    "dice_deformed": 0.8832601264733221,
+    "false_alarm_rate_symmetric": 0.006666666666666667
+  },
+  "parameters": 482737,
+  "train_seconds": 64.4,
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.267101764678955,
+      "dice": 0.43061389501677977,
+      "iou": 0.2912290549944048,
+      "dice_deformed": 0.5018809965230534,
+      "false_alarm_rate_symmetric": 1.0
+    },
+    {
+      "epoch": 2,
+      "loss": 1.1939220428466797,
+      "dice": 0.5615395605446051,
+      "iou": 0.44358514830658385,
+      "dice_deformed": 0.5845449423596795,
+      "false_alarm_rate_symmetric": 0.5774647887323944
+    },
+    {
+      "epoch": 3,
+      "loss": 1.034245252609253,
+      "dice": 0.7366431904848724,
+      "iou": 0.6286417941062398,
+      "dice_deformed": 0.7256913642014828,
+      "false_alarm_rate_symmetric": 0.19718309859154928
+    },
+    {
+      "epoch": 4,
+      "loss": 0.9000896215438843,
+      "dice": 0.6648768699472376,
+      "iou": 0.5749101628864118,
+      "dice_deformed": 0.6397166316401371,
+      "false_alarm_rate_symmetric": 0.18309859154929578
+    },
+    {
+      "epoch": 5,
+      "loss": 0.6089867949485779,
+      "dice": 0.7715786286338718,
+      "iou": 0.6772743122025391,
+      "dice_deformed": 0.7547536464264242,
+      "false_alarm_rate_symmetric": 0.1267605633802817
+    },
+    {
+      "epoch": 6,
+      "loss": 0.6218872666358948,
+      "dice": 0.7174688775825636,
+      "iou": 0.6179785696381784,
+      "dice_deformed": 0.7243227011451789,
+      "false_alarm_rate_symmetric": 0.323943661971831
+    },
+    {
+      "epoch": 7,
+      "loss": 0.3743445873260498,
+      "dice": 0.8159575917586328,
+      "iou": 0.74263617258255,
+      "dice_deformed": 0.7948223680170545,
+      "false_alarm_rate_symmetric": 0.056338028169014086
+    },
+    {
+      "epoch": 8,
+      "loss": 0.24096941947937012,
+      "dice": 0.8140198406321497,
+      "iou": 0.7402724249663681,
+      "dice_deformed": 0.7832399074966779,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 9,
+      "loss": 0.21932834386825562,
+      "dice": 0.8217420216456169,
+      "iou": 0.7335844715630305,
+      "dice_deformed": 0.792240118468085,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 10,
+      "loss": 0.18717196583747864,
+      "dice": 0.8424712336898263,
+      "iou": 0.7658493400878967,
+      "dice_deformed": 0.8164000392655318,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 11,
+      "loss": 0.2247353345155716,
+      "dice": 0.8138776795130296,
+      "iou": 0.7379022716629988,
+      "dice_deformed": 0.8087152441876803,
+      "false_alarm_rate_symmetric": 0.15492957746478872
+    },
+    {
+      "epoch": 12,
+      "loss": 0.3380122184753418,
+      "dice": 0.8301508372262567,
+      "iou": 0.753693335400011,
+      "dice_deformed": 0.8020406028278052,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 13,
+      "loss": 0.18776027858257294,
+      "dice": 0.8588818433854714,
+      "iou": 0.7865559926847814,
+      "dice_deformed": 0.8425196309853978,
+      "false_alarm_rate_symmetric": 0.04225352112676056
+    },
+    {
+      "epoch": 14,
+      "loss": 0.22940219938755035,
+      "dice": 0.8440996080094333,
+      "iou": 0.7675557628338489,
+      "dice_deformed": 0.8182979114329059,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 15,
+      "loss": 0.213609516620636,
+      "dice": 0.8370041085492247,
+      "iou": 0.7626163113906762,
+      "dice_deformed": 0.8100280985422201,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 16,
+      "loss": 0.16654172539710999,
+      "dice": 0.8460753740887834,
+      "iou": 0.7757703914363812,
+      "dice_deformed": 0.820600669101146,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 17,
+      "loss": 0.11687389016151428,
+      "dice": 0.8548172092286581,
+      "iou": 0.790766345017828,
+      "dice_deformed": 0.8307892881452892,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 18,
+      "loss": 0.10823720693588257,
+      "dice": 0.8688402942259372,
+      "iou": 0.8037973238694094,
+      "dice_deformed": 0.8494642123845422,
+      "false_alarm_rate_symmetric": 0.014084507042253521
+    },
+    {
+      "epoch": 19,
+      "loss": 0.1518804132938385,
+      "dice": 0.8746598019489656,
+      "iou": 0.8118977655706544,
+      "dice_deformed": 0.8539158530873725,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 20,
+      "loss": 0.14166872203350067,
+      "dice": 0.8805601527052827,
+      "iou": 0.8186976529486294,
+      "dice_deformed": 0.8607927187707257,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 21,
+      "loss": 0.11147605627775192,
+      "dice": 0.8495468498772154,
+      "iou": 0.78670248096431,
+      "dice_deformed": 0.8246466781785727,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 22,
+      "loss": 0.20996561646461487,
+      "dice": 0.8743055847447131,
+      "iou": 0.8097977987999603,
+      "dice_deformed": 0.8535030125229757,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 23,
+      "loss": 0.10878664255142212,
+      "dice": 0.8789490871651758,
+      "iou": 0.816668877711156,
+      "dice_deformed": 0.8589150200060324,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 24,
+      "loss": 0.11217860132455826,
+      "dice": 0.8914893743883108,
+      "iou": 0.8302829922369167,
+      "dice_deformed": 0.8735307393803157,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 25,
+      "loss": 0.1261647641658783,
+      "dice": 0.8916225107595054,
+      "iou": 0.8319842881181205,
+      "dice_deformed": 0.8736859099761136,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 26,
+      "loss": 0.10822556167840958,
+      "dice": 0.883505469943922,
+      "iou": 0.8236964032010966,
+      "dice_deformed": 0.8642254894451308,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 27,
+      "loss": 0.13154275715351105,
+      "dice": 0.8845270047359335,
+      "iou": 0.8246408121993287,
+      "dice_deformed": 0.8654160894358199,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 28,
+      "loss": 0.08951560407876968,
+      "dice": 0.8840344617582163,
+      "iou": 0.8258255620993373,
+      "dice_deformed": 0.8648420300212312,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 29,
+      "loss": 0.2055208832025528,
+      "dice": 0.8895263904519849,
+      "iou": 0.8323332141117744,
+      "dice_deformed": 0.8712428793146677,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 30,
+      "loss": 0.0972394049167633,
+      "dice": 0.8950828951196268,
+      "iou": 0.8353550898473466,
+      "dice_deformed": 0.877718991980917,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 31,
+      "loss": 0.14593945443630219,
+      "dice": 0.8991322292273259,
+      "iou": 0.841086363137657,
+      "dice_deformed": 0.8824384956029437,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 32,
+      "loss": 0.08381246030330658,
+      "dice": 0.8898334618605566,
+      "iou": 0.8327384883683503,
+      "dice_deformed": 0.8739317737302522,
+      "false_alarm_rate_symmetric": 0.014084507042253521
+    },
+    {
+      "epoch": 33,
+      "loss": 0.09828672558069229,
+      "dice": 0.8938445849637653,
+      "iou": 0.8385561241096796,
+      "dice_deformed": 0.8762757400510087,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 34,
+      "loss": 0.09493211656808853,
+      "dice": 0.8965906947553349,
+      "iou": 0.8416013742448115,
+      "dice_deformed": 0.879476334213677,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 35,
+      "loss": 0.10321181267499924,
+      "dice": 0.8983268911757093,
+      "iou": 0.8428542415989541,
+      "dice_deformed": 0.8814998731651623,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 36,
+      "loss": 0.09925425052642822,
+      "dice": 0.8971229432787559,
+      "iou": 0.8418917770932036,
+      "dice_deformed": 0.8800966704880605,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 37,
+      "loss": 0.10104983299970627,
+      "dice": 0.9001481307213236,
+      "iou": 0.8440750053490822,
+      "dice_deformed": 0.8836225299782327,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 38,
+      "loss": 0.08673509955406189,
+      "dice": 0.8999789865385996,
+      "iou": 0.8449324629451608,
+      "dice_deformed": 0.8834253922361301,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 39,
+      "loss": 0.11174999177455902,
+      "dice": 0.8996640875645168,
+      "iou": 0.8447875498674482,
+      "dice_deformed": 0.8830583771148215,
+      "false_alarm_rate_symmetric": 0.0
+    },
+    {
+      "epoch": 40,
+      "loss": 0.07456425577402115,
+      "dice": 0.8992265783126232,
+      "iou": 0.8444145358200561,
+      "dice_deformed": 0.8825484595718219,
+      "false_alarm_rate_symmetric": 0.0
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      # CPU build of PyTorch: the tests do not need a GPU.
+      - run: pip install uv && uv pip install --system torch --index-url https://download.pytorch.org/whl/cpu
+      - run: uv pip install --system -e ".[dev]"
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pytest -q
