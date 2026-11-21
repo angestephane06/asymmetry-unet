@@ -63,7 +63,22 @@ def make_sample(
         pairs.append((0.0, rng.uniform(-0.8, 0.8), rng.uniform(-0.3, 0.35), rng.uniform(0.08, 0.3)))
     z += _gaussians(x, y, np.array(pairs))
 
-    labels = np.zeros(n_points, dtype=bool)
+    return deform_and_place(x, y, z, rng, p_deformed, noise, max_rotation_deg)
+
+
+def deform_and_place(
+    x: Array,
+    y: Array,
+    z: Array,
+    rng: np.random.Generator,
+    p_deformed: float = 0.85,
+    noise: float = 0.004,
+    max_rotation_deg: float = 12.0,
+) -> Sample:
+    """Add one-sided local deformations (with their labels), noise and a rigid motion to a
+    surface that is symmetric about x = 0. Shared by every kind of base surface."""
+    labels = np.zeros(len(x), dtype=bool)
+    z = z.copy()
     if rng.random() < p_deformed:
         side = rng.choice([-1.0, 1.0])  # both deformations of a sample on the same side
         for _ in range(rng.integers(1, 3)):
@@ -76,7 +91,7 @@ def make_sample(
             # A point is "deformed" if it moved by more than a quarter of the bump height.
             labels |= np.abs(delta) > 0.25 * abs(amp)
 
-    z += rng.normal(0.0, noise, n_points)
+    z += rng.normal(0.0, noise, len(x))
     canonical = np.stack([x, y, z], axis=1)
     rotation = _rotation(rng, max_rotation_deg)
     translation = rng.uniform(-0.3, 0.3, 3)

@@ -1,0 +1,9 @@
+canonical_face_model.obj
+
+Source: MediaPipe, https://github.com/google-ai-edge/mediapipe
+File: mediapipe/modules/face_geometry/data/canonical_face_model.obj
+Commit: 3ad0cf1606656efc101717952741749393ff96a3
+Licence: Apache License 2.0, Copyright The MediaPipe Authors.
+http://www.apache.org/licenses/LICENSE-2.0
+
+The file is redistributed unmodified. It is a generic face mesh, not a scan of a real person.

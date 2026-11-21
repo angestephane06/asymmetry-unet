@@ -125,3 +125,24 @@ def train(data_dir: Path, out_dir: Path, epochs: int = 40, seed: int = 0) -> dic
     }
     (out_dir / "results.json").write_text(json.dumps(results, indent=2))
     return results
+
+
+def evaluate_on(run_dir: Path, data_dir: Path) -> dict[str, object]:
+    """Test-set scores of an already trained model on another dataset, with the ICP baseline
+    threshold re-tuned on that dataset's validation split."""
+    model = UNet()
+    model.load_state_dict(torch.load(run_dir / "unet.pt", map_location="cpu"))
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    model.to(device)
+    (va_x, va_y), (te_x, te_y) = (load(data_dir / f"{s}.npz") for s in ("val", "test"))
+    tau = baseline_threshold(va_x, va_y)
+    valid = te_x[:, 2] > 0
+    return {
+        "model": str(run_dir),
+        "data": str(data_dir),
+        "baseline_icp_threshold": {
+            "threshold": tau,
+            **summarize(te_x[:, 1] > tau, te_y > 0.5, valid),
+        },
+        "unet": summarize(predict(model, normalise(te_x), device) > 0.5, te_y > 0.5, valid),
+    }

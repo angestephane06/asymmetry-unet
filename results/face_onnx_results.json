@@ -1,0 +1,20 @@
+{
+  "fp32": {
+    "dice": 0.8767394450411186,
+    "iou": 0.8128485032844651,
+    "dice_deformed": 0.8571720104763829,
+    "false_alarm_rate_symmetric": 0.0,
+    "size_kb": 1889.9,
+    "cpu_latency_ms_batch1_1thread": 1.163,
+    "max_abs_diff_vs_pytorch": 2.232193946838379e-05
+  },
+  "int8": {
+    "dice": 0.8765661915154858,
+    "iou": 0.8123487262773718,
+    "dice_deformed": 0.858130001756067,
+    "false_alarm_rate_symmetric": 0.0072992700729927005,
+    "size_kb": 514.8,
+    "cpu_latency_ms_batch1_1thread": 0.623,
+    "max_abs_diff_vs_pytorch": 0.7982804179191589
+  }
+}

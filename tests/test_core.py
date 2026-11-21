@@ -62,3 +62,24 @@ def test_metrics() -> None:
 def test_unet_output_shape() -> None:
     out = UNet()(torch.zeros(2, 3, 64, 64))
     assert out.shape == (2, 1, 64, 64)
+
+
+def test_face_mesh_is_symmetric_and_normalised() -> None:
+    from scipy.spatial import cKDTree
+
+    from asymunet.face import load_face
+
+    vertices, faces = load_face()
+    assert len(vertices) == 468 and faces.max() < len(vertices)
+    assert abs(np.ptp(vertices[:, 0]) - 2.0) < 1e-9
+    mirrored = vertices * [-1, 1, 1]
+    assert cKDTree(vertices).query(mirrored)[0].max() < 1e-6
+
+
+def test_face_samples_are_deformed_on_one_side() -> None:
+    from asymunet.face import make_face_sample
+
+    sample = make_face_sample(np.random.default_rng(2), p_deformed=1.0, max_rotation_deg=0.0)
+    xs = sample.points[sample.labels, 0] - sample.translation[0]
+    assert sample.labels.any() and (np.all(xs > 0) or np.all(xs < 0))
+    assert build_one(4, "face")["inputs"].shape == (3, 64, 64)

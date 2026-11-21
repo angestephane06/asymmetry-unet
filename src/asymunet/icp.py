@@ -69,7 +69,7 @@ def estimate_symmetry_plane(
 ) -> SymmetryPlane:
     """Estimate the symmetry plane of a point cloud.
 
-    init="pca-min" reproduces the MATLAB code: the initial normal is the principal axis of
+    init="pca-min" reproduces a first MATLAB draft: the initial normal is the principal axis of
     smallest variance. On a surface patch such as a face, that axis is usually the depth
     direction, not the left-right one, and ICP can settle on a wrong plane. "pca-all" starts
     from each of the three principal axes and keeps the plane of lowest mean asymmetry.
